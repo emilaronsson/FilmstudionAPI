@@ -10,16 +10,19 @@ namespace FilmstudionAPI.Data.Mapper
         public FilmStudionMapper()
         {
             CreateMap<User, UnAuthUser>();
-            CreateMap<User, RegisterUnAuthUser>();
 
             CreateMap<FilmStudio, UnAuthFilmStudio>();
+
             CreateMap<RegisterFilmStudio, FilmStudio>();
 
             CreateMap<User, UserRegisterRequest>().ReverseMap();
 
             CreateMap<User, UserRegisterResponse>().ReverseMap();
+
             CreateMap<Film, UnAuthFilm>();
+
             CreateMap<UpdateFilm, Film>();
+
             CreateMap<CreateFilm, Film>();
         }
     }

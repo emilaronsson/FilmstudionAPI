@@ -45,13 +45,6 @@ namespace FilmstudionAPI.Controllers
                         };
                         newUser = await userRepository.Register(userRegister);
                         return mapper.Map<UserRegisterResponse>(newUser);
-
-                        //if (await userRepository.SaveChangesAsync())
-                        //{
-                        //    return Ok(newUser);
-
-                        //    //await userRepository.AddUser(userRegister);
-                        //}
                     }
                 }
                 catch(Exception ex)

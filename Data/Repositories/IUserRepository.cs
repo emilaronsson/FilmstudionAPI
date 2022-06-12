@@ -5,7 +5,6 @@ namespace FilmstudionAPI.Data.Repositories
 {
     public interface IUserRepository
     {
-        void AddUser(User user);
         Task<User> Register(UserRegisterRequest userRegister);
         Task<User> GetUserByName(string username);
 

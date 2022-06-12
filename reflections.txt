@@ -1,0 +1,20 @@
+REST
+
+Mina controllers har skapats och namngivits i enighet med kraven för hur åtkomstpunkterna ska se ut.
+Exempelvis: för åtkomstpunkten api/filmstudio skapas controllern FilmStudioController.cs.
+Varje controller får attributet [ApiController] samt controllerns route [Route("api/[controller]")].
+Ytterligare åtkomstpunkter på varje controllers route anges med attributet [Http]. Exempelvis [HttpPost("rent")] när man ska hyra film. Alltså api/films/rent.
+
+IMPLEMENTATION
+
+I projektet finns modeller för FilmStudio, Film, FilmCopy och User. Vissa modeller innehåller känslig information,
+eller information som enligt kravspecifikationen inte ska visas vid vissa anrop beroende på vilken typ av användare som gör anropet.
+För att hantera det skapade jag "UnAuth-klasser" där jag använder attributet [JsonIgnore] för att inte skicka med viss information, exempelvis "password".
+
+SÄKERHET
+
+Jag har använt mig av Jwt-tokens vid autentisering av användarna. Beroende på den roll man har har man olika behörighet i APIt.
+Enligt kravspecifikationen finns det vissa saker som bara en Admin har behörighet till, exempelvis att redigera antalet tillgängliga kopior av en film.
+För att säkerställa att bara en admin kan göra det så autentiserar jag användaren med hjälp av dess token, följt av en "rolecheck" bestående av en if-sats som kollar ifall användaren innehar rollen "Admin".
+Om inte så returneras meddelandet Unauthorized.
+Jag har tyvärr inte hunnit göra något användargränssnitt.

@@ -33,7 +33,7 @@ namespace FilmstudionAPI.Controllers
             {
 
                 var filmstudios = await filmStudioRepository.GetAllFilmStudiosAsync();
-                if (filmstudios == null) return NotFound();
+                if (filmstudios == null) return NotFound("Filmstudio not found");
                 
 
                 if(User.Identity.Name != null)
@@ -61,7 +61,7 @@ namespace FilmstudionAPI.Controllers
             {
                     var existing = await filmStudioRepository.GetFilmStudioAsync(registerFilmStudio.Name);
 
-                    if (existing != null) return BadRequest("Film studio already exists");
+                    if (existing != null) return BadRequest("Filmstudio already exists");
 
                     FilmStudio filmStudio = mapper.Map<RegisterFilmStudio, FilmStudio>(registerFilmStudio);
 
@@ -85,12 +85,12 @@ namespace FilmstudionAPI.Controllers
             try
             {
                 var filmStudio = await filmStudioRepository.GetFilmStudioByIdAsync(id);
-                if (filmStudio == null) return NotFound();
+                if (filmStudio == null) return NotFound("Filmstudio not found");
 
                 if(User.Identity.Name != null)
                 {
                     var user = await userRepository.GetUserByName(User.Identity.Name);
-                    if(user == null) return NotFound();
+                    if(user == null) return NotFound("User not found");
 
                     if(user.Role == "Admin" || user.FilmStudioId == filmStudio.FilmStudioId)
                     {

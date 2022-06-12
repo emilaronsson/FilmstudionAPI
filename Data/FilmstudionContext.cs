@@ -58,42 +58,42 @@ namespace FilmstudionAPI.Data
                 new Film
                 {
                     FilmId = 1,
-                    Title = "",
-                    Description = "",
-                    Director = "",
-                    Country = ""
+                    Title = "Tenet",
+                    Description = "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+                    Director = "Cristopher Nolan",
+                    Country = "United States"
                 },
                 new Film
                 {
                     FilmId = 2,
-                    Title = "",
-                    Description = "",
-                    Director = "",
-                    Country = ""
+                    Title = "Dunkirk",
+                    Description = "Allied soldiers from Belgium, the British Commonwealth and Empire, and France are surrounded by the German Army and evacuated during a fierce battle in World War II.",
+                    Director = "Cristopher Nolan",
+                    Country = "United Kingdom"
                 },
                 new Film
                 {
                     FilmId = 3,
-                    Title = "",
-                    Description = "",
-                    Director = "",
-                    Country = ""
+                    Title = "Interstellar",
+                    Description = "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+                    Director = "Cristopher Nolan",
+                    Country = "United States"
                 },
                 new Film
                 {
                     FilmId = 4,
-                    Title = "",
-                    Description = "",
-                    Director = "",
-                    Country = ""
+                    Title = "Inception",
+                    Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+                    Director = "Cristopher Nolan",
+                    Country = "United States"
                 },
                 new Film
                 {
                     FilmId = 5,
-                    Title = "",
-                    Description = "",
-                    Director = "",
-                    Country = ""
+                    Title = "The Prestige",
+                    Description = "After a tragic accident, two stage magicians in 1890s London engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+                    Director = "Cristopher Nolan",
+                    Country = "United Kingdom"
                 }
                 );
 

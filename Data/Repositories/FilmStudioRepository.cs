@@ -22,14 +22,13 @@ namespace FilmstudionAPI.Data.Repositories
 
         public async Task<FilmStudio[]> GetAllFilmStudiosAsync()
         {
-            return await filmstudionContext.FilmStudios.ToArrayAsync();
-            //throw new System.NotImplementedException();
+            return await filmstudionContext.FilmStudios.Include(f => f.RentedFilmCopies).ToArrayAsync();
         }
 
         public async Task<FilmStudio> GetFilmStudioAsync(string name)
         {
             return await filmstudionContext.FilmStudios
-                //.Include(f => f.RentedFilmCopies)
+                .Include(f => f.RentedFilmCopies)
                 .FirstOrDefaultAsync(f => f.Name.ToLower() == name.ToLower());
         }
 
@@ -37,8 +36,8 @@ namespace FilmstudionAPI.Data.Repositories
         {
             return await filmstudionContext.FilmStudios
                 .Where(f => f.FilmStudioId == id)
+                .Include(f => f.RentedFilmCopies)
                 .FirstOrDefaultAsync();
-            //throw new System.NotImplementedException();
         }
 
         public async Task<bool> SaveChangesAsync()

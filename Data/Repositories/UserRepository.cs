@@ -16,10 +16,6 @@ namespace FilmstudionAPI.Data.Repositories
             context = _context;
             mapper = _mapper;
         }
-        public void AddUser(User user)
-        {
-            context.Users.Add(user);
-        }
 
         public Task<User> Register(UserRegisterRequest userRegister)
         {
